@@ -95,7 +95,7 @@
   <h2>🙋‍♂️ Author</h2>
   <p>Made with ❤️ by <strong>Siddharth Jain</strong></p>
 
-  <h2>📜 License</h2>
-  <p>This project is licensed under the <strong>MIT License</strong>.</p>
+  <h2>Contact</h2>
+  <p>https://www.linkedin.com/in/siddharth-jain-8b56a2321/</p>
 </body>
 </html>
