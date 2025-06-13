@@ -1,0 +1,6 @@
+Generate a short summary of the book titled: {{Title}} by {{Author}}.
+Rules to follow:
+1. Word limit 100 it should not be crossed.
+2. Tone should be soft and like a human.
+3. Keep it in simple english don't use tough vocabulary.
+4. Assume that it is to be read by class 10th student.
