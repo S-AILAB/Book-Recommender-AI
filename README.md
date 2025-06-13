@@ -77,10 +77,10 @@
 
   <h2>📷 Screenshots</h2>
   <p>
-    <img src="https://raw.githubusercontent.com/yourusername/recommendation-system/main/screenshots/book-recommendation.png" alt="Book Recommendation UI" width="700" />
+    <img src="https://github.com/S-AILAB/Book-Recommender-AI/blob/main/Screenshot%202025-06-13%20at%206.00.00%E2%80%AFPM.png" alt="Book Recommendation UI" width="700" />
   </p>
   <p>
-    <img src="https://raw.githubusercontent.com/yourusername/recommendation-system/main/screenshots/ai-summary.png" alt="AI Summary" width="700" />
+    <img src="https://github.com/S-AILAB/Book-Recommender-AI/blob/main/Screenshot%202025-06-13%20at%206.00.41%E2%80%AFPM.png" width="700" />
   </p>
 
   <h2>🛠 Tech Stack</h2>
