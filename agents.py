@@ -1,10 +1,13 @@
 from dotenv import load_dotenv
 import os
 from openai import OpenAI
+import streamlit as st
 
 # Load environment variables
-load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# load_dotenv()
+# GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]["api_key"]
 
 client = OpenAI(
     api_key=GEMINI_API_KEY,
