@@ -110,7 +110,7 @@ if st.session_state.get('recommend_triggered', False):
     # col1, col2 = st.columns(2)
 
     # with col1:
-            if st.button("📖Generate Summary"):
+    if st.button("📖Generate Summary"):
                         from agents import generate_summary
                         with st.spinner("Generating summary..."):
                             summary = generate_summary(selected_book_title, selected_book_author)
