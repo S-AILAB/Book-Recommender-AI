@@ -14,7 +14,7 @@ st.markdown('''
             ##### This site using colaborative filtering to recommend books from our catalog.
             
             ''')
-st.markdown(''' Click on show button ''')
+
 
 # Load the model
 popular = pickle.load(open('popular.pkl', 'rb'))
@@ -30,7 +30,7 @@ st.sidebar.title("📚Book Recommender System")
 
 st.sidebar.badge('📚Top 100 Books')
 
-if st.sidebar.button('SHOW'):
+if st.sidebar.button('SHOW BOOKS'):
     st.markdown('''
                 ##### We recommend Top 100 Books📚 for everyone as well.
                 ''')
@@ -112,7 +112,6 @@ if st.session_state.get('recommend_triggered', False):
     #col1, col2 = st.columns(2)
 
     # with col1:
-    #     if 
     if st.button("📖Generate Summary"):
                 from agents import generate_summary
                 with st.spinner("Generating summary..."):
@@ -135,26 +134,26 @@ if st.session_state.get('recommend_triggered', False):
     #             st.markdown(f"[🔗 Buy on Amazon]({link})")
 
 
-# #import data
-# books = pd.read_csv('Data/Books.csv') #books data
-# users = pd.read_csv('Data/Users.csv') #users data
-# ratings = pd.read_csv('Data/Ratings.csv') #users rating data
+#import data
+books = pd.read_csv('Data/Books.csv') #books data
+users = pd.read_csv('Data/Users.csv') #users data
+ratings = pd.read_csv('Data/Ratings.csv') #users rating data
 
-# # Display the dataset
-# st.sidebar.markdown('---')
-# st.sidebar.badge('📊 Dataset Overview')
-# if st.sidebar.button('Show Dataset'):
-#     st.markdown('''
-#                 ##### Here is the dataset we used to train our model.
-#                 ''')
-#     st.subheader("Books Dataset")
-#     st.dataframe(books)  # Display the first few rows of the books dataset
-#     st.markdown('---')
-#     st.subheader("Users Dataset")
-#     st.dataframe(users)   # Display the first few rows of the users dataset
-#     st.markdown('---')
-#     st.subheader("Ratings Dataset")
-#     st.dataframe(ratings) # Display the first few rows of the ratings dataset
+# Display the dataset
+st.sidebar.markdown('---')
+st.sidebar.badge('📊 Dataset Overview')
+if st.sidebar.button('Show Dataset'):
+    st.markdown('''
+                ##### Here is the dataset we used to train our model.
+                ''')
+    st.subheader("Books Dataset")
+    st.dataframe(books)  # Display the first few rows of the books dataset
+    st.markdown('---')
+    st.subheader("Users Dataset")
+    st.dataframe(users)   # Display the first few rows of the users dataset
+    st.markdown('---')
+    st.subheader("Ratings Dataset")
+    st.dataframe(ratings) # Display the first few rows of the ratings dataset
 
 
 
