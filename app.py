@@ -153,7 +153,7 @@ if st.session_state.get('recommend_triggered', False):
 #     return books, users, ratings
 
 # Load data once
-books, users, ratings = load_data()
+#books, users, ratings = load_data()
 
 # Display the dataset
 st.sidebar.markdown('---')
