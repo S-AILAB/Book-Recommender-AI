@@ -135,9 +135,18 @@ if st.session_state.get('recommend_triggered', False):
 
 
 #import data
-books = pd.read_csv('Data/Books.csv') #books data
-users = pd.read_csv('Data/Users.csv') #users data
-ratings = pd.read_csv('Data/Ratings.csv') #users rating data
+# books = pd.read_csv('Data/Books.csv') #books data
+# users = pd.read_csv('Data/Users.csv') #users data
+# ratings = pd.read_csv('Data/Ratings.csv') #users rating data
+@st.cache_data
+def load_data():
+    books = pd.read_csv('Data/Books.csv')
+    users = pd.read_csv('Data/Users.csv')
+    ratings = pd.read_csv('Data/Ratings.csv')
+    return books, users, ratings
+
+# Load data once
+books, users, ratings = load_data()
 
 # Display the dataset
 st.sidebar.markdown('---')
