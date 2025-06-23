@@ -5,6 +5,13 @@ import numpy as np
 import pickle
 from amazon_webscrp import search_amazon
 
+#load dataset
+books = pd.read_csv('Data/Books.csv')
+users = pd.read_csv('Data/Users.csv')
+ratings = pd.read_csv('Data/Ratings.csv')
+
+
+
 #layout of the streamlit page
 
 st.set_page_config(layout="wide")
@@ -138,12 +145,12 @@ if st.session_state.get('recommend_triggered', False):
 # books = pd.read_csv('Data/Books.csv') #books data
 # users = pd.read_csv('Data/Users.csv') #users data
 # ratings = pd.read_csv('Data/Ratings.csv') #users rating data
-@st.cache_data
-def load_data():
-    books = pd.read_csv('Data/Books.csv')
-    users = pd.read_csv('Data/Users.csv')
-    ratings = pd.read_csv('Data/Ratings.csv')
-    return books, users, ratings
+# @st.cache_data
+# def load_data():
+#     books = pd.read_csv('Data/Books.csv')
+#     users = pd.read_csv('Data/Users.csv')
+#     ratings = pd.read_csv('Data/Ratings.csv')
+#     return books, users, ratings
 
 # Load data once
 books, users, ratings = load_data()
