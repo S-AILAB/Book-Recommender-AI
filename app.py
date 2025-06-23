@@ -37,20 +37,20 @@ st.sidebar.title("📚Book Recommender System")
 
 
 st.button('SHOW BOOKS')
-            st.markdown('''
-                            ##### We recommend Top 100 Books📚 for everyone as well.
-                            ''')
-            num_rows = 20
-            cols_per_row = 5
-            for row in range(num_rows):
-                    cols =st.columns(cols_per_row)
-                    for col in range(cols_per_row):
-                        book_idx = row * cols_per_row + col
-                        if book_idx < len(popular):
-                            with cols[col]:
-                                st.image(popular.iloc[book_idx]['Image-URL-M'])#display image
-                                st.text(popular.iloc[book_idx]['Book-Title'])#display title
-                                st.text(popular.iloc[book_idx]['Book-Author'])#display author name
+st.markdown('''
+                ##### We recommend Top 100 Books📚 for everyone as well.
+                ''')
+num_rows = 20
+cols_per_row = 5
+for row in range(num_rows):
+        cols =st.columns(cols_per_row)
+        for col in range(cols_per_row):
+            book_idx = row * cols_per_row + col
+            if book_idx < len(popular):
+                with cols[col]:
+                    st.image(popular.iloc[book_idx]['Image-URL-M'])#display image
+                    st.text(popular.iloc[book_idx]['Book-Title'])#display title
+                    st.text(popular.iloc[book_idx]['Book-Author'])#display author name
 
 st.sidebar.badge('📚Top 100 Books')
 
