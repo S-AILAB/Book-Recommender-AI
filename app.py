@@ -123,13 +123,13 @@ if st.session_state.get('recommend_triggered', False):
     #         with st.spinner("Fetching buying links..."):
     #             links = generate_buy_links(selected_book_title, selected_book_author)
     #             st.success("Purchase Links:")
-    #             st.write(links)
-    with col2:
-        if st.button("🛒🔗 Get Purchase Link"):
-            with st.spinner("Searching Amazon..."):
-                link = search_amazon(selected_book_title, selected_book_author)
-                st.success("Purchase Link:")
-                st.markdown(f"[🔗 Buy on Amazon]({link})")
+    # #             st.write(links)
+    # with col2:
+    #     if st.button("🛒🔗 Get Purchase Link"):
+    #         with st.spinner("Searching Amazon..."):
+    #             link = search_amazon(selected_book_title, selected_book_author)
+    #             st.success("Purchase Link:")
+    #             st.markdown(f"[🔗 Buy on Amazon]({link})")
 
 
 #import data
