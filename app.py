@@ -5,13 +5,6 @@ import numpy as np
 import pickle
 from amazon_webscrp import search_amazon
 
-#load dataset
-books = pd.read_csv('Data/Books.csv')
-users = pd.read_csv('Data/Users.csv')
-ratings = pd.read_csv('Data/Ratings.csv')
-
-
-
 #layout of the streamlit page
 
 st.set_page_config(layout="wide")
@@ -19,9 +12,7 @@ st.set_page_config(layout="wide")
 st.header('Welcome to the Book Recommender System! 📚')
 st.markdown('''
             ##### This site using colaborative filtering to recommend books from our catalog.
-            
             ''')
-
 
 # Load the model
 popular = pickle.load(open('popular.pkl', 'rb'))
@@ -33,16 +24,17 @@ similarity_scores = pickle.load(open('similarity_score.pkl', 'rb'))
 st.sidebar.title("📚Book Recommender System")
 # st.sidebar.markdown('---')
 
+#top 50 books
 
+st.sidebar.badge('📚Top 100 Books')
 
-
-st.button('SHOW BOOKS')
-st.markdown('''
+if st.sidebar.button('SHOW'):
+    st.markdown('''
                 ##### We recommend Top 100 Books📚 for everyone as well.
                 ''')
-num_rows = 20
-cols_per_row = 5
-for row in range(num_rows):
+    num_rows = 20
+    cols_per_row = 5
+    for row in range(num_rows):
         cols =st.columns(cols_per_row)
         for col in range(cols_per_row):
             book_idx = row * cols_per_row + col
@@ -52,7 +44,6 @@ for row in range(num_rows):
                     st.text(popular.iloc[book_idx]['Book-Title'])#display title
                     st.text(popular.iloc[book_idx]['Book-Author'])#display author name
 
-st.sidebar.badge('📚Top 100 Books')
 
 
 #Function to recommend books
@@ -116,15 +107,15 @@ if st.session_state.get('recommend_triggered', False):
     selected_book_title = st.selectbox("📕 Select Book Title", titles)
     selected_book_author = st.selectbox("👤 Select Book Author", authors)
 
-    #col1, col2 = st.columns(2)
+    # col1, col2 = st.columns(2)
 
     # with col1:
-    if st.button("📖Generate Summary"):
-                from agents import generate_summary
-                with st.spinner("Generating summary..."):
-                            summary = generate_summary(selected_book_title, selected_book_author)
-                            st.success("Summary:")
-                            st.write(summary)
+if st.button("📖Generate Summary"):
+            from agents import generate_summary
+            with st.spinner("Generating summary..."):
+                summary = generate_summary(selected_book_title, selected_book_author)
+                st.success("Summary:")
+                st.write(summary)
 
     # with col2:
     #     if st.button("🛒🔗 Get Purchase Links"):
@@ -141,19 +132,10 @@ if st.session_state.get('recommend_triggered', False):
     #             st.markdown(f"[🔗 Buy on Amazon]({link})")
 
 
-#import data
+# #import data
 # books = pd.read_csv('Data/Books.csv') #books data
 # users = pd.read_csv('Data/Users.csv') #users data
 # ratings = pd.read_csv('Data/Ratings.csv') #users rating data
-# @st.cache_data
-# def load_data():
-#     books = pd.read_csv('Data/Books.csv')
-#     users = pd.read_csv('Data/Users.csv')
-#     ratings = pd.read_csv('Data/Ratings.csv')
-#     return books, users, ratings
-
-# Load data once
-#books, users, ratings = load_data()
 
 # # Display the dataset
 # st.sidebar.markdown('---')
