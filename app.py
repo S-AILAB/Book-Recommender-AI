@@ -37,13 +37,13 @@ st.sidebar.title("📚Book Recommender System")
 
 st.sidebar.badge('📚Top 100 Books')
 
-if st.sidebar.button('SHOW BOOKS'):
-    st.markdown('''
+st.sidebar.button('SHOW BOOKS')
+st.markdown('''
                 ##### We recommend Top 100 Books📚 for everyone as well.
                 ''')
-    num_rows = 20
-    cols_per_row = 5
-    for row in range(num_rows):
+num_rows = 20
+cols_per_row = 5
+for row in range(num_rows):
         cols =st.columns(cols_per_row)
         for col in range(cols_per_row):
             book_idx = row * cols_per_row + col
