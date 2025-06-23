@@ -12,7 +12,9 @@ st.set_page_config(layout="wide")
 st.header('Welcome to the Book Recommender System! 📚')
 st.markdown('''
             ##### This site using colaborative filtering to recommend books from our catalog.
+            
             ''')
+st.markdown(''' Click on show button ''')
 
 # Load the model
 popular = pickle.load(open('popular.pkl', 'rb'))
@@ -107,10 +109,11 @@ if st.session_state.get('recommend_triggered', False):
     selected_book_title = st.selectbox("📕 Select Book Title", titles)
     selected_book_author = st.selectbox("👤 Select Book Author", authors)
 
-    col1, col2 = st.columns(2)
+    #col1, col2 = st.columns(2)
 
-    with col1:
-        if st.button("📖Generate Summary"):
+    # with col1:
+    #     if 
+            st.button("📖Generate Summary")
             from agents import generate_summary
             with st.spinner("Generating summary..."):
                 summary = generate_summary(selected_book_title, selected_book_author)
