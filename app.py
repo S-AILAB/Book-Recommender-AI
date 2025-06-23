@@ -33,11 +33,11 @@ similarity_scores = pickle.load(open('similarity_score.pkl', 'rb'))
 st.sidebar.title("📚Book Recommender System")
 # st.sidebar.markdown('---')
 
-#top 50 books
+
 
 st.sidebar.badge('📚Top 100 Books')
 
-# st.sidebar.button('SHOW BOOKS')
+st.sidebar.button('SHOW BOOKS')
 st.markdown('''
                 ##### We recommend Top 100 Books📚 for everyone as well.
                 ''')
