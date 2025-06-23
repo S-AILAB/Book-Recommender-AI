@@ -36,7 +36,7 @@ st.sidebar.title("📚Book Recommender System")
 
 
 
-st.button('SHOW BOOKS'):
+st.button('SHOW BOOKS')
             st.markdown('''
                             ##### We recommend Top 100 Books📚 for everyone as well.
                             ''')
