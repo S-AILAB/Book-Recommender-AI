@@ -133,9 +133,9 @@ if st.session_state.get('recommend_triggered', False):
 
 
 #import data
-books = pd.read_csv('/Users/siddharthjain/Desktop/SJ/cuvette/python ML program/Add On Projects/📚Recommendation System by me/Data/Books.csv') #books data
-users = pd.read_csv('/Users/siddharthjain/Desktop/SJ/cuvette/python ML program/Add On Projects/📚Recommendation System by me/Data/Users.csv') #users data
-ratings = pd.read_csv('/Users/siddharthjain/Desktop/SJ/cuvette/python ML program/Add On Projects/📚Recommendation System by me/Data/Ratings.csv') #users rating data
+books = pd.read_csv('Data/Books.csv') #books data
+users = pd.read_csv('Data/Users.csv') #users data
+ratings = pd.read_csv('Data/Ratings.csv') #users rating data
 
 # Display the dataset
 st.sidebar.markdown('---')
