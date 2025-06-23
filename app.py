@@ -155,21 +155,21 @@ if st.session_state.get('recommend_triggered', False):
 # Load data once
 #books, users, ratings = load_data()
 
-# Display the dataset
-st.sidebar.markdown('---')
-st.sidebar.badge('📊 Dataset Overview')
-if st.sidebar.button('Show Dataset'):
-    st.markdown('''
-                ##### Here is the dataset we used to train our model.
-                ''')
-    st.subheader("Books Dataset")
-    st.dataframe(books)  # Display the first few rows of the books dataset
-    st.markdown('---')
-    st.subheader("Users Dataset")
-    st.dataframe(users)   # Display the first few rows of the users dataset
-    st.markdown('---')
-    st.subheader("Ratings Dataset")
-    st.dataframe(ratings) # Display the first few rows of the ratings dataset
+# # Display the dataset
+# st.sidebar.markdown('---')
+# st.sidebar.badge('📊 Dataset Overview')
+# if st.sidebar.button('Show Dataset'):
+#     st.markdown('''
+#                 ##### Here is the dataset we used to train our model.
+#                 ''')
+#     st.subheader("Books Dataset")
+#     st.dataframe(books)  # Display the first few rows of the books dataset
+#     st.markdown('---')
+#     st.subheader("Users Dataset")
+#     st.dataframe(users)   # Display the first few rows of the users dataset
+#     st.markdown('---')
+#     st.subheader("Ratings Dataset")
+#     st.dataframe(ratings) # Display the first few rows of the ratings dataset
 
 
 
